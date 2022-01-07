@@ -1,0 +1,98 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th {
+    font-weight: 600;
+    background-color: #52B294;
+    color: #fff;
+    height: 38px;
+    padding: 5px 10px;
+    text-align: center;
+}
+td {
+    border: 1px solid #CECACA;
+    padding: 5px;
+    text-align: center;
+    height: 40px;
+}
+td.last {
+    width: 1px;
+    white-space: nowrap;
+}
+.local-vi {
+    background-color: #F0F2F5;
+    font-weight: bold;
+}
+.current-year {
+    width: 25px;
+    padding: 10px;
+    color: #717171;
+    background-color: #EAEFF7;
+}
+.carry-over {
+    width: 40px;
+    padding: 0 22px;
+}
+.prog-signal {
+    div {
+        height: 45px;
+        width: 45px;
+        border-radius: 50px;
+        margin: 0 auto;
+    }
+    .bg-signal-green {
+        background-color: #52B294;
+    }
+    .bg-signal-yellow {
+        background-color: #EABA0C;
+    }
+    .bg-signal-red {
+        background-color: #CC4848;
+    }
+}
+.bg-green {
+    background-color: rgba(82,178,148,0.24);
+}
+.bg-yellow {
+    background-color: rgba(232,222,106,0.24);
+}
+.bg-red {
+    background-color: rgba(178, 82, 82, 0.24);
+}
+ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    
+    li {
+        display: flex;
+        flex-direction: row;
+        padding: 0 5px;
+
+        .legend-ball-green, .legend-ball-yellow, .legend-ball-red {
+            margin: 0 10px;
+        }
+
+        .legend-ball-green {
+            width: 22px;
+            height: 22px;
+            border-radius: 50px;
+            background-color: #52B294;
+        }
+
+        .legend-ball-yellow {
+            width: 22px;
+            height: 22px;
+            border-radius: 50px;
+            background-color: #EABA0C;
+        }
+
+        .legend-ball-red {
+            width: 22px;
+            height: 22px;
+            border-radius: 50px;
+            background-color: #CC4848;
+        }
+    }
+}

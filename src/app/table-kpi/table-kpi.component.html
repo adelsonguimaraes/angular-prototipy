@@ -1,0 +1,75 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th width="20px">Progress</th>
+                <th colspan="2">Impact V.I</th>
+                <th *ngFor="let item of dataSource.yr">{{item.month}}</th>
+                <th>Prog. Signal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="11" class="local-vi">Local V.I</td>
+                <td colspan="2">{{dataSource.last_year}}Y R</td>
+                <td *ngFor="let item of dataSource.yr">{{item.value}}</td>
+                <td rowspan="11" class="prog-signal">
+                    <div [ngClass]="['bg-signal-green']"></div>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="3">Target</td>
+            </tr>
+            <tr>
+                <td>Internal</td>
+                <td *ngFor="let item of dataSource.target_internal">{{item.value}}</td>
+            </tr>
+            <tr>
+                <td>Aggres</td>
+                <td *ngFor="let item of dataSource.target_aggres">{{item.value}}</td>
+            </tr>
+            <tr>
+                <td rowspan="4" class="current-year">{{dataSource.current_year}}Y R(U$)</td>
+            </tr>
+            <tr>
+                <td>New Idea</td>
+                <td *ngFor="let item of dataSource.new_idea">{{item.value}}</td>
+            </tr>
+            <tr>
+                <td class="carry-over">{{dataSource.last_year}}-{{dataSource.current_year}}Y CarryOver</td>
+                <td *ngFor="let item of dataSource.carry_over">{{item.value}}</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td *ngFor="let item of dataSource.total">{{item.value}}</td>
+            </tr>
+            <tr>
+                <td colspan="2">Achievement (%)</td>
+                <td *ngFor="let item of dataSource.achievement;" [ngClass]="{'bg-green': item.value>=100, 'bg-yellow': (item.value<100), 'bg-red': item.value<90}">{{item.value}}%</td>
+            </tr>
+            <tr>
+                <td colspan="2">Improve (%)</td>
+                <td *ngFor="let item of dataSource.improve; index as i;" [ngClass]="{'bg-green': dataSource.achievement[i].value>=100, 'bg-yellow': (dataSource.achievement[i].value<100), 'bg-red': dataSource.achievement[i].value<90}">{{item.value}}</td>
+            </tr>
+            <tr>
+                <td colspan="2">PY (%)</td>
+                <td *ngFor="let item of dataSource.py">{{item.value}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <ul>
+        <li>
+            <div class="legend-ball-green"></div>
+            100%
+        </li>
+        <li>
+            <div class="legend-ball-yellow"></div>
+            90%
+        </li>
+        <li>
+            <div class="legend-ball-red"></div>
+            80%
+        </li>
+    </ul>
+</div>
